@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useTicker } from '../../hooks';
+import './Clock.css';
 
 const Clock = ({ timezone }) => {
 	const date = useTicker(timezone);
 
 	return (
-		<div>
-			<div>{date.format('LTS')}</div>
+		<div className='clock'>
+			{date.format('LTS')}
 		</div>
 	);
 };
