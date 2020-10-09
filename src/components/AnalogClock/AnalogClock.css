@@ -18,14 +18,13 @@
 
 .seconds,
 .minute,
-.hour
-{
+.hour {
   transform: translate(20px, 20px) rotate(0deg);
 }
 
 .seconds {
   transform: translate(20px, 20px) rotate(calc(var(--current-seconds) * 6deg));
-  stroke-width: 0.3; 
+  stroke-width: 0.3;
   stroke: #d00505;
 }
 
@@ -39,7 +38,10 @@
   transform: translate(20px, 20px) rotate(calc(var(--current-hours) * 30deg));
   animation: rotateHourHand calc(12 * 60 * 60s) linear infinite;
   stroke-width: 1;
-  animation-delay: calc(calc(var(--current-minutes) * -60 * 1s) + calc(var(--current-seconds) * -1 * 1s));
+  animation-delay: calc(
+    calc(var(--current-minutes) * -60 * 1s) +
+      calc(var(--current-seconds) * -1 * 1s)
+  );
 }
 
 .pin {
@@ -53,7 +55,8 @@
     transform: translate(20px, 20px) rotate(calc(var(--current-seconds) * 6deg));
   }
   to {
-    transform: translate(20px, 20px) rotate(calc(var(--current-seconds) * 6deg + 360deg));
+    transform: translate(20px, 20px)
+      rotate(calc(var(--current-seconds) * 6deg + 360deg));
   }
 }
 
@@ -62,7 +65,8 @@
     transform: translate(20px, 20px) rotate(calc(var(--current-minutes) * 6deg));
   }
   to {
-    transform: translate(20px, 20px) rotate(calc(var(--current-minutes) * 6deg + 360deg));
+    transform: translate(20px, 20px)
+      rotate(calc(var(--current-minutes) * 6deg + 360deg));
   }
 }
 
@@ -71,7 +75,8 @@
     transform: translate(20px, 20px) rotate(calc(var(--current-hours) * 30deg));
   }
   to {
-    transform: translate(20px, 20px) rotate(calc(var(--current-hours) * 30deg + 360deg));
+    transform: translate(20px, 20px)
+      rotate(calc(var(--current-hours) * 30deg + 360deg));
   }
 }
 
