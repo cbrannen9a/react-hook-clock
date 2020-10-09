@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
-import moment from "moment-timezone";
+import { getDate, getDateWithTimezone } from "../helpers";
 
 const useTicker = (timezone: TimeZone) => {
-  const [date, setDate] = useState(moment());
+  const [date, setDate] = useState(getDate());
 
   useEffect(() => {
+    const tick = () => {
+      setDate(getDateWithTimezone(timezone.value));
+    };
+
     let ticker = setInterval(() => tick(), 1000);
     return () => clearInterval(ticker);
-  });
-
-  const tick = () => {
-    setDate(moment().tz(timezone.value));
-  };
+  }, [timezone.value]);
 
   return date;
 };

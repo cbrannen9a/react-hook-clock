@@ -24,7 +24,7 @@ const Dropdown: FC<Props> = ({ items, initialValue, handleSelected }) => {
       const element = document.getElementById(selected.value);
       element?.scrollIntoView({ behavior: "auto" });
     }
-  });
+  }, [open, selected.value]);
 
   return (
     <div className="dd-container">
