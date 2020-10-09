@@ -8,9 +8,9 @@ const AnalogClock: FC<Props> = ({ timezone }) => {
 
   const getTimeStyles = () => {
     return {
-      "--current-seconds": date.seconds(),
-      "--current-minutes": date.minutes(),
-      "--current-hours": date.hours() % 12,
+      "--current-seconds": date.second(),
+      "--current-minutes": date.minute(),
+      "--current-hours": date.hour() % 12,
     } as CSSProperties;
   };
 
