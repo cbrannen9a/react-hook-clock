@@ -1,4 +1,4 @@
-export const timezones = [
+export const timezones : TimeZone[] = [
   {
     label: "Niue",
     value: "Pacific/Niue",

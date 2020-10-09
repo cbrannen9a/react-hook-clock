@@ -1,10 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { useTicker } from "../../hooks/index";
+import React, { CSSProperties, FC } from "react";
+import { useTicker } from "../../hooks";
 
 import "./AnalogClock.css";
 
-const AnalogClock = ({ timezone }) => {
+const AnalogClock: FC<Props> = ({ timezone }) => {
   const date = useTicker(timezone);
 
   const getTimeStyles = () => {
@@ -12,7 +11,7 @@ const AnalogClock = ({ timezone }) => {
       "--current-seconds": date.seconds(),
       "--current-minutes": date.minutes(),
       "--current-hours": date.hours() % 12,
-    };
+    } as CSSProperties;
   };
 
   return (
@@ -40,8 +39,8 @@ const AnalogClock = ({ timezone }) => {
   );
 };
 
-AnalogClock.propTypes = {
-  timezone: PropTypes.object.isRequired,
-};
+interface Props {
+  timezone: TimeZone;
+}
 
 export default AnalogClock;

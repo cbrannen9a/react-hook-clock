@@ -1,17 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
-
+import React, { FC } from "react";
 import { useTicker } from "../../hooks";
+
 import "./Clock.css";
 
-const Clock = ({ timezone }) => {
+const Clock: FC<Props> = ({ timezone }) => {
   const date = useTicker(timezone);
 
   return <div className="clock">{date.format("LTS")}</div>;
 };
 
-Clock.propTypes = {
-  timezone: PropTypes.object.isRequired,
-};
+interface Props {
+  timezone: TimeZone;
+}
 
 export default Clock;

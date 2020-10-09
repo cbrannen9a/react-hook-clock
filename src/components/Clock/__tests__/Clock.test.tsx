@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Clock from '../components/elements/Clock';
+import Clock from '../Clock';
 
 describe('Clock', () => {
 	it('renders without crashing', () => {
 		const div = document.createElement('div');
-		ReactDOM.render(<Clock timezone={{}} />, div);
+		ReactDOM.render(<Clock timezone={{label: "test", value: "test"}} />, div);
 	});
 });

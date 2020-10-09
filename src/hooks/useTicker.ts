@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import moment from "moment-timezone";
 
-export default (timezone) => {
+const useTicker = (timezone: TimeZone) => {
   const [date, setDate] = useState(moment());
 
   useEffect(() => {
@@ -15,3 +15,5 @@ export default (timezone) => {
 
   return date;
 };
+
+export default useTicker;

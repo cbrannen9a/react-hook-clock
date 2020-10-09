@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-import AnalogClock from "./elements/AnalogClock";
-import Clock from "./elements/Clock";
+import AnalogClock from "../AnalogClock";
+import Clock from "../Clock";
 
-import Dropdown from "./elements/Dropdown";
-import { timezones } from "../constants/timezones";
+import Dropdown from "../Dropdown";
+import { timezones } from "../../constants";
 
 import "./App.css";
 

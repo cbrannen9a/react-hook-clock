@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect, FC } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,11 +9,11 @@ import {
 
 import "./Dropdown.css";
 
-const Dropdown = ({ items, initialValue, handleSelected }) => {
+const Dropdown: FC<Props> = ({ items, initialValue, handleSelected }) => {
   const [open, toggleOpen] = useState(false);
   const [selected, setSelected] = useState(initialValue);
 
-  const handleClick = (item) => {
+  const handleClick = (item: DropDownItem) => {
     setSelected(item);
     toggleOpen(!open);
     handleSelected(item);
@@ -23,7 +22,7 @@ const Dropdown = ({ items, initialValue, handleSelected }) => {
   useEffect(() => {
     if (open) {
       const element = document.getElementById(selected.value);
-      element.scrollIntoView({ behavior: "auto" });
+      element?.scrollIntoView({ behavior: "auto" });
     }
   });
 
@@ -62,15 +61,10 @@ const Dropdown = ({ items, initialValue, handleSelected }) => {
   );
 };
 
-Dropdown.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      value: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  initialValue: PropTypes.object.isRequired,
-  handleSelected: PropTypes.func.isRequired,
-};
+interface Props {
+  items: DropDownItem[];
+  initialValue: DropDownItem;
+  handleSelected: (item: DropDownItem) => void;
+}
 
 export default Dropdown;

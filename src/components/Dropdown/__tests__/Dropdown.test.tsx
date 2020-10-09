@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Dropdown from '../components/elements/Dropdown';
+import Dropdown from '../Dropdown';
 
 const items = [{ label: 'test', value: 'value' }, { label: 'default', value: 'default' }];
 const initialValue = { label: 'default', value: 'default' };
-const handleSelected = (item) => console.log(item);
+const handleSelected = (item: DropDownItem) => {};
 
 describe('Dropdown', () => {
 	it('renders without crashing', () => {
