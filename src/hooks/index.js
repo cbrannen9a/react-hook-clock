@@ -1,3 +1,3 @@
-import useTicker from './useTicker';
+import useTicker from "./useTicker";
 
 export { useTicker };
